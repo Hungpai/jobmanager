@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="/css/login.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg">
+    <title>Login page</title>
+</head>
+<body>
+<!--<h1>Login Page</h1>-->
+<!--<div th:if="${param.error}">-->
+<!--    Wrong username or password-->
+<!--</div>-->
+<!--<div th:if="${param.logout}">-->
+<!--    You have been successfully logged out-->
+<!--</div>-->
+<!--<form th:action="@{/login}" method="post">-->
+<!--    <input name="username" type="text" placeholder="Username">-->
+<!--    <input name="password" type="password" placeholder="Password">-->
+<!--    <input type="submit" value="Login">-->
+<!--</form>-->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div th:insert="~{fragments/header_login::header}"></div>
+<br>
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card-group mb-0">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <h1>Login</h1>
+                        <p class="text-muted">Sign In to your account</p>
+                        <div class="alert alert-success" role="alert" th:if="${param.register_success}">
+                            Account was successfully created. Please Enter your credentials to login.
+                        </div>
+                        <div class="alert alert-danger" role="alert" th:if="${param.error}">
+                            Authentication Failed: Wrong username or password.
+                        </div>
+                        <div class="alert alert-success" role="alert" th:if="${param.logout}">
+                            You have been successfully logged out.
+                        </div>
+                        <form th:action="@{/login}" method="post">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                <input name="username" type="text" class="form-control" placeholder="Username">
+                            </div>
+                            <div class="input-group mb-4">
+                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                <input name="password" type="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button value="Login" type="submit" class="btn btn-primary px-4">Login</button>
+                                </div>
+<!--                                <div class="col-6 text-right">-->
+<!--                                    <button type="button" class="btn btn-link px-0">Forgot password?</button>-->
+<!--                                </div>-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                    <div class="card-body text-center">
+                        <div>
+                            <h2>Sign up</h2>
+                            <p>This application helps you to manage your job applications quick and easy. Have a structured overview of your currently applying jobs.</p>
+                            <a href="/account/register">
+                                <button type="button" class="btn btn-primary active mt-3">Register Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{fragments/footer::footer}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
