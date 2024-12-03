@@ -2,6 +2,11 @@ package com.jobmanager.entitiy;
 
 import jakarta.persistence.*;
 
+/**
+ * This entity class represents social media links of companies.
+ * This class is optional and multiple jobs can have reference onto
+ * one media object.
+ */
 @Entity
 public class SocialMedia {
 

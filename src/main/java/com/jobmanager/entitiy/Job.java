@@ -2,6 +2,13 @@ package com.jobmanager.entitiy;
 
 import jakarta.persistence.*;
 
+/**
+ * This entity class represents a job application, storing name of company
+ * and the title of the job. This class will be table in the database
+ * created by JPA. A job has a reference to user to create a bi-directional
+ * one-to-many relationship. Additionally it has a reference to an
+ * optional SocialMedia object to store social media related information.
+ */
 @Entity
 public class Job {
 
@@ -25,11 +32,11 @@ public class Job {
     private String jobUrl;
 
     @ManyToOne
-    @JoinColumn(name="media_id")
+    @JoinColumn(name = "media_id")
     private SocialMedia media;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private Account user;
 
     public Job(Long id, String company, String title, Status status) {
@@ -78,16 +85,16 @@ public class Job {
         return imgUrl;
     }
 
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
     public String getJobUrl() {
         return jobUrl;
     }
 
     public void setJobUrl(String jobUrl) {
         this.jobUrl = jobUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
     }
 
     public Account getUser() {

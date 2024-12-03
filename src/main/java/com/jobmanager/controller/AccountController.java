@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Handles requests related to creating an account (registration)
+ */
 @Controller
 @RequestMapping("/account")
 public class AccountController {
@@ -23,6 +26,14 @@ public class AccountController {
     @Autowired
     private BCryptPasswordEncoder encoder;
 
+    /**
+     * This functions returns the account page of the user.
+     * Showing details of that account.
+     *
+     * @param model       Needed send data to display / template
+     * @param userDetails Enables access to the user who is currently logged in.
+     * @return String which indicates the name of the template to sent to the client.
+     */
     @GetMapping
     public String getAccountPage(Model model, @AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
@@ -31,6 +42,12 @@ public class AccountController {
         return "account_page";
     }
 
+    /**
+     * Handles the request to return the registration page.
+     *
+     * @param model to send data to display
+     * @return String indicating the template
+     */
     @GetMapping("/register")
     public String getRegisterPage(Model model) {
         Account acc = new Account();
@@ -38,6 +55,14 @@ public class AccountController {
         return "register_page";
     }
 
+    /**
+     * This functions creates a new account. If a username
+     * is already taken redirect with an error parameter.
+     * If unique, redirect to login page with success parameter
+     *
+     * @param acc Account object serialized from the submitted form.
+     * @return String indicating the template to return.
+     */
     @PostMapping("/register")
     public String registerAccount(@ModelAttribute Account acc) {
         String username = acc.getUsername();

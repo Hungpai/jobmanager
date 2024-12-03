@@ -9,6 +9,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+
+/**
+ * This service class handles the logic for authorization by implementing
+ * the UserDetailsService interface.
+ */
 @Service
 public class CustomUserDetailService implements UserDetailsService {
 
