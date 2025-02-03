@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 /**
  * This entity class represents a job application, storing name of company
  * and the title of the job. This class will be table in the database
- * created by JPA. A job has a reference to user to create a bi-directional
- * one-to-many relationship. Additionally it has a reference to an
+ * created by JPA. A job has a reference to user to create a bidirectional
+ * one-to-many relationship. Additionally, it has a reference to an
  * optional SocialMedia object to store social media related information.
  */
 @Entity

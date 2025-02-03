@@ -4,15 +4,13 @@ Job application manager project using Java Web with Spring Framework and Thymele
 
 # Demo
 
-Deployed on render.com via Docker:
+Deployed on AWS via EC2:
 
-- https://jobapplicationdemo.onrender.com/
-
-Response may take up to >50 seconds due to free tier deployment.
+- https://jobmanager.hungpy.de/login
 
 - Login:
     - Create Account
-    - Or Username: User and Password: password
+    - Or Username: user and Password: password
 
 # Features
 
@@ -67,15 +65,15 @@ src/main/resources/ and uncomment the dependancy in pom.xml:
 
 # Unit Tests
 
-Unit tests are available in src/test/java/com/jobmanager/.
-Basic CRUD functionality are tested on Account and Job table.
+- Unit tests are available in src/test/java/com/jobmanager/.
+- Basic CRUD functionality are tested on Account and Job table.
 
 # ER Model
 
 - ACCOUNT <-> Job: 1 Mandatory to Many Optional
 - JOB <-> Social_Media: Many Optional to 1 Optional
 
-![er-diagram](er_diagram.jpg)
+![er-diagram](schema.JPG)
 
 # UML Diagram
 
@@ -83,6 +81,11 @@ Basic CRUD functionality are tested on Account and Job table.
 - Separating domain logic from persistance logic using Repository Pattern.
 
 ![uml-diagram](uml_diagram.jpg)
+
+# Cloud Architecture
+- Services: Route 53, CloudFront, S3, ALB, EC2, RDS
+
+![aws](aws.jpg)
 
 # Screenshots
 
