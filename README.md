@@ -1,6 +1,6 @@
 # Job Application Manager
 
-Job application manager project using Java Web with Spring Framework and Thymeleaf.
+Job application manager project using Java with Spring Framework and Thymeleaf.
 
 # Demo
 
