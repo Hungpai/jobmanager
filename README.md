@@ -20,7 +20,7 @@ Deployed on AWS via EC2:
 
 # Requirements
 
-- Java JDK 1.8
+- Java 17
 - Maven 4.0.0
 - Bootstrap 5.2.3
 
